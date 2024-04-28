@@ -1,6 +1,10 @@
 import GridEffect from "./GridEffect";
 
-export default function Tutorial({ tutorialID }: { tutorialID: string }) {
+export default function TutorialSelector({
+  tutorialID,
+}: {
+  tutorialID: string;
+}) {
   const components: { [key: string]: React.FC } = {
     grideffect: GridEffect,
   };
