@@ -15,7 +15,7 @@ export default function ConceptSelector({
     <div>
       {/* <div className={`${""}`}>
       </div> */}
-      <div id="tutorials" className="p-4 my-2">
+      <div id="concepts" className="p-1">
         {c1Component}
         {c2Component}
       </div>

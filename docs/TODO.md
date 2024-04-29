@@ -1,6 +1,7 @@
 # TODO
 
-- setting empty state for `<ConceptSelector />`
+- [ ] consider "routes" or different pages for tutorial & concepts
+- [ ] setting empty state for `<ConceptSelector />`
 
 ```tsx
 const [isEmpty, setEmptyInfo] = useState<boolean | React.ReactElement>(false);

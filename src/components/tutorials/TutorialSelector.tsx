@@ -1,4 +1,5 @@
 import GridEffect from "./GridEffect";
+import AnimatedTextInput from "./AnimatedTextInput";
 
 export default function TutorialSelector({
   tutorialID,
@@ -7,6 +8,7 @@ export default function TutorialSelector({
 }) {
   const components: { [key: string]: React.FC } = {
     grideffect: GridEffect,
+    animatedtextinput: AnimatedTextInput,
   };
 
   const ComponentToRender = components[tutorialID.toLocaleLowerCase()];
