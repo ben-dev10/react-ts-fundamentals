@@ -1,14 +1,16 @@
 import GridEffect from "./GridEffect";
 import AnimatedTextInput from "./AnimatedTextInput";
+import SVGHoverEffect from "./SVGHoverEffect";
 
 export default function TutorialSelector({
   tutorialID,
 }: {
-  tutorialID: string;
+  tutorialID: "grideffect" | "animatedtextinput" | "svghovereffect";
 }) {
   const components: { [key: string]: React.FC } = {
     grideffect: GridEffect,
     animatedtextinput: AnimatedTextInput,
+    svghovereffect: SVGHoverEffect,
   };
 
   const ComponentToRender = components[tutorialID.toLocaleLowerCase()];
