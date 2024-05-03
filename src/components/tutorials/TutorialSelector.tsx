@@ -3,6 +3,7 @@ import AnimatedTextInput from "./AnimatedTextInput";
 import SVGHoverEffect from "./SVGHoverEffect";
 import AnimatedHeroText from "./AnimatedHeroText";
 import TWCSSPlugins from "./TWCSSPlugins";
+import BentoGrids from "./BentoGrids";
 
 export default function TutorialSelector({
   tutorialID,
@@ -12,7 +13,8 @@ export default function TutorialSelector({
     | "animatedtextinput"
     | "svghovereffect"
     | "animatedherotext"
-    | "twcssplugins";
+    | "twcssplugins"
+    | "bentogrids";
 }) {
   const components: { [key: string]: React.FC } = {
     grideffect: GridEffect,
@@ -20,6 +22,7 @@ export default function TutorialSelector({
     svghovereffect: SVGHoverEffect,
     animatedherotext: AnimatedHeroText,
     twcssplugins: TWCSSPlugins,
+    bentogrids: BentoGrids,
   };
 
   const ComponentToRender = components[tutorialID.toLocaleLowerCase()];

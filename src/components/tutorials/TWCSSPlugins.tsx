@@ -30,7 +30,7 @@ export default function TWCSSPlugins() {
           </div>
 
           <div className="flex items-center mt-2 mb-3">
-            <p className="">
+            <p className="text-gray-400">
               I have read and agreed to the{" "}
               <span className="text-accent">Terms and Conditions</span> and{" "}
               <span className="text-accent">Privacy Policy</span>{" "}

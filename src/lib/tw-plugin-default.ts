@@ -55,7 +55,7 @@ export const defaultPlugin = plugin(
                 "@apply border-border":{},
             },
             body:{
-                "color":""
+                // "color":""
             }
         })
     },
