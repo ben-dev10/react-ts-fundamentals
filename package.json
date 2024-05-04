@@ -5,13 +5,21 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "db:push": "drizzle-kit push:pg",
+    "generate": "drizzle-kit generate:pg",
+    "db:studio": "drizzle-kit studio",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
+    "dotenv": "^16.4.1",
+    "drizzle-kit": "^0.20.17",
+    "drizzle-orm": "^0.30.10",
     "framer-motion": "^11.0.20",
     "lucide-react": "^0.302.0",
+    "pg": "^8.11.5",
+    "postgres": "^3.4.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.21.1",

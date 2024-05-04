@@ -4,7 +4,7 @@ import SVGHoverEffect from "./SVGHoverEffect";
 import AnimatedHeroText from "./AnimatedHeroText";
 import TWCSSPlugins from "./TWCSSPlugins";
 import BentoGrids from "./BentoGrids";
-
+import DrizzleDB from "./DrizzleDB";
 export default function TutorialSelector({
   tutorialID,
 }: {
@@ -14,7 +14,8 @@ export default function TutorialSelector({
     | "svghovereffect"
     | "animatedherotext"
     | "twcssplugins"
-    | "bentogrids";
+    | "bentogrids"
+    | "drizzledb";
 }) {
   const components: { [key: string]: React.FC } = {
     grideffect: GridEffect,
@@ -23,6 +24,7 @@ export default function TutorialSelector({
     animatedherotext: AnimatedHeroText,
     twcssplugins: TWCSSPlugins,
     bentogrids: BentoGrids,
+    drizzledb: DrizzleDB,
   };
 
   const ComponentToRender = components[tutorialID.toLocaleLowerCase()];
