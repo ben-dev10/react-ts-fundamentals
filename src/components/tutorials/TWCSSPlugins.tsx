@@ -9,14 +9,14 @@ export default function TWCSSPlugins() {
         </div>
 
         <div className="body">
-          <h1 className="font-[800] text-xl">Sign up for free</h1>
+          <h1 className="font-[800] text-xl color-red">Sign up for free</h1>
           <p className="text-gray-400 text-[13px] mt-2">
             Livestream your matches on{" "}
             <span className="text-accent">Sentry</span>, the number one
             Streaming Platform globally.
           </p>
 
-          <div className="inputs mt-4 space-y-2">
+          <div className="inputs mt-4 space-y-2 text-gray-400">
             <input
               type="text"
               className="w-full text-[13px] outline-none bg-gray-100 p-2 rounded-sm placeholder:text-gray-600"
@@ -39,7 +39,8 @@ export default function TWCSSPlugins() {
               type="checkbox"
               name=""
               id=""
-              className="mr-1 accent-pink-500"
+              className="mr-1 accent-pink-500 "
+              defaultChecked
             />
           </div>
 
@@ -50,7 +51,7 @@ export default function TWCSSPlugins() {
           </div>
 
           <div className="sign-in">
-            <p className="text-center">
+            <p className="text-center text-gray-600">
               Already have an account?{" "}
               <span className="text-accent1 text-opacity-1">Sign In.</span>
             </p>

@@ -14,7 +14,14 @@ const config =  {
   theme: {
     extend: {},
   },
-  plugins: [defaultPlugin],
+  plugins: [defaultPlugin,function ({ addUtilities }) {
+      const newUtilities = {
+        '.color-red': {
+          'color': 'red',
+        },
+      };
+      addUtilities(newUtilities, ['responsive', 'hover']);
+    },],
 } satisfies Config
 
 export default config

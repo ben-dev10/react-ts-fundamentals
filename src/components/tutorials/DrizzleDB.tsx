@@ -1,4 +1,4 @@
-import { addData } from "../../server/actions/queries";
+// import { addData } from "../../server/actions/queries";
 
 //FIXME: fix Buffer error
 
