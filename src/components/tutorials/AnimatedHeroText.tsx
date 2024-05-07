@@ -41,7 +41,10 @@ export default function AnimatedHeroText() {
           }}
           className="flex gap-3 justify-center mt-4"
         >
-          <motion.button whileTap={{scale:0.9}} className="px-3 py-2 text-[12px] bg-white text-black rounded-md">
+          <motion.button
+            whileTap={{ scale: 0.9 }}
+            className="px-3 py-2 text-[12px] bg-white text-black rounded-md"
+          >
             Buy now
           </motion.button>
           <button className="px-3 py-2 text-[12px]  text-white rounded-md border border-gray-600">

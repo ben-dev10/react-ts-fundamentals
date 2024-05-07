@@ -40,6 +40,7 @@ export default function HeaderSlider() {
           Today is going to be{" "}
           <span className="font-[garamond] font-[800] text-yellow-300">
             awesome
+            
           </span>
         </h1>
       </div>

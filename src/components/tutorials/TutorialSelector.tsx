@@ -6,6 +6,7 @@ import TWCSSPlugins from "./TWCSSPlugins";
 import BentoGrids from "./BentoGrids";
 import DrizzleDB from "./DrizzleDB";
 import HeaderSlider from "./HeaderSlider";
+import ErrorBoundary from "../ErrorBoundary";
 export default function TutorialSelector({
   tutorialID,
 }: {
@@ -45,8 +46,10 @@ export default function TutorialSelector({
     );
   }
   return (
-    <div className="tutorial">
-      <ComponentToRender />
-    </div>
+    <ErrorBoundary>
+      <div className="tutorial">
+        <ComponentToRender />
+      </div>
+    </ErrorBoundary>
   );
 }
