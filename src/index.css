@@ -9,3 +9,13 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 }
+
+@layer components {
+  .title {
+    @apply text-white font-[sans-serif] text-[8vw] mx-[15vw] my-0 w-[70vw]
+  }
+
+  .side {
+    @apply h-[100vh] w-[100vw] grid place-items-center overflow-hidden absolute
+  }
+}

@@ -5,6 +5,7 @@ import AnimatedHeroText from "./AnimatedHeroText";
 import TWCSSPlugins from "./TWCSSPlugins";
 import BentoGrids from "./BentoGrids";
 import DrizzleDB from "./DrizzleDB";
+import HeaderSlider from "./HeaderSlider";
 export default function TutorialSelector({
   tutorialID,
 }: {
@@ -15,7 +16,8 @@ export default function TutorialSelector({
     | "animatedherotext"
     | "twcssplugins"
     | "bentogrids"
-    | "drizzledb";
+    | "drizzledb"
+    | "headerslider";
 }) {
   const components: { [key: string]: React.FC } = {
     grideffect: GridEffect,
@@ -25,6 +27,7 @@ export default function TutorialSelector({
     twcssplugins: TWCSSPlugins,
     bentogrids: BentoGrids,
     drizzledb: DrizzleDB,
+    headerslider: HeaderSlider,
   };
 
   const ComponentToRender = components[tutorialID.toLocaleLowerCase()];
