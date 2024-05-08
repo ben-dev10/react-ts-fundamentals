@@ -18,4 +18,8 @@
   .side {
     @apply h-[100vh] w-[100vw] grid place-items-center overflow-hidden absolute
   }
+
+  .nav-label {
+    @apply text-neutral-400 cursor-pointer p-2 px-3 rounded-md hover:bg-neutral-700 hover:text-white
+  }
 }

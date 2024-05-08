@@ -7,6 +7,7 @@ import BentoGrids from "./BentoGrids";
 import DrizzleDB from "./DrizzleDB";
 import HeaderSlider from "./HeaderSlider";
 import ErrorBoundary from "../ErrorBoundary";
+import VercelNav from "./VercelNav";
 export default function TutorialSelector({
   tutorialID,
 }: {
@@ -18,7 +19,8 @@ export default function TutorialSelector({
     | "twcssplugins"
     | "bentogrids"
     | "drizzledb"
-    | "headerslider";
+    | "headerslider"
+    | "vercelnav";
 }) {
   const components: { [key: string]: React.FC } = {
     grideffect: GridEffect,
@@ -29,6 +31,7 @@ export default function TutorialSelector({
     bentogrids: BentoGrids,
     drizzledb: DrizzleDB,
     headerslider: HeaderSlider,
+    vercelnav: VercelNav,
   };
 
   const ComponentToRender = components[tutorialID.toLocaleLowerCase()];
