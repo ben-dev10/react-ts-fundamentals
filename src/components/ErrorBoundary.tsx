@@ -8,16 +8,21 @@ type ErrorBoundaryProps = {
   children: React.ReactNode;
 };
 
-export function FallbackComponent(error: Error) {
+export function FallbackComponent({ error }: { error: Error }) {
   return (
-    <div role="alert">
-      <p>Something went wrong:</p>
-      <pre className="bg-gray-300 text-gray-950 p-3">{error.message}</pre>
+    <div role="alert" className="w-full h-screen grid place-items-center">
+      <div className="p-3 rounded-sm bg-neutral-500/50">
+        <p>Something went wrong:</p>
+        <pre className="bg-gray-300 text-gray-950 p-3">{error.message}</pre>
+      </div>
     </div>
   );
 }
 
-// main error boundary component
+/*
+*  Basic, pre React-18 implementation of ErrorBoundary component.
+* For the best implementation use the "react-error-boundary" package
+*/
 class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   constructor(props: ErrorBoundaryProps) {
     super(props);
@@ -41,10 +46,8 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
       return (
         <div className="">
           <h1>Something went wrong.</h1>
-          {/* <p className="">{error.message}</p> */}
         </div>
       );
-      // return (<FallbackComponent error={error} />);
     }
 
     return this.props.children;
