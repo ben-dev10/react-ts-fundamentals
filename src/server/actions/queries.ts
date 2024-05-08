@@ -14,4 +14,15 @@ export const getData = async () => {
   return data;
 };
 
-// addData(1,"John Doe", "0555") 
+
+// Queries
+async function makeQueries(){
+  await db.insert(users).values({
+    fullName: "🏁checkpoint 1: 🎉",
+    phone:"0544"
+  })
+  const user = await db.query.users.findFirst()
+  console.log(user)
+}
+
+makeQueries()

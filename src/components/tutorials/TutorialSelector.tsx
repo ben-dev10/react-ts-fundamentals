@@ -49,8 +49,8 @@ export default function TutorialSelector({
     );
   }
   return (
-      <div className="tutorial">
-        <ComponentToRender />
-      </div>
+    <div className="tutorial">
+      <ComponentToRender />
+    </div>
   );
 }

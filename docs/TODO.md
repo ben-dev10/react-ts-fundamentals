@@ -1,6 +1,7 @@
 # TODO
 
-- [ ] consider "routes" or different pages for tutorial & concepts
+- [ ] tests
+- [ ] consider "routes" (`react-router`,`wouter`...) or different pages for tutorial & concepts
 - [ ] setting empty state for `<ConceptSelector />`
 
 ```tsx
@@ -32,3 +33,5 @@ return (
   </div>
 );
 ```
+
+"db:migrate": "tsx ./src/server/actions/queries.tsx",
