@@ -7,6 +7,7 @@ import BentoGrids from "./BentoGrids";
 import DrizzleDB from "./DrizzleDB";
 import HeaderSlider from "./HeaderSlider";
 import VercelNav from "./VercelNav";
+import TextParallaxScroll from "./TextParallaxScroll";
 
 export default function TutorialSelector({
   tutorialID,
@@ -20,7 +21,8 @@ export default function TutorialSelector({
     | "bentogrids"
     | "drizzledb"
     | "headerslider"
-    | "vercelnav";
+    | "vercelnav"
+    | "textparallaxscroll";
 }) {
   const components: { [key: string]: React.FC } = {
     grideffect: GridEffect,
@@ -32,6 +34,7 @@ export default function TutorialSelector({
     drizzledb: DrizzleDB,
     headerslider: HeaderSlider,
     vercelnav: VercelNav,
+    textparallaxscroll: TextParallaxScroll,
   };
 
   const ComponentToRender = components[tutorialID.toLocaleLowerCase()];

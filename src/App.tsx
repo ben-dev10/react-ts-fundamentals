@@ -1,5 +1,5 @@
 import ConceptSelector from "./components/concepts/ConceptSelector";
-import TutorialSelector from "./components/tutorials/TutorialSelector";
+import TutorialSelector from "./components/tutorials/_TutorialSelector";
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
         <ConceptSelector concept2 />
       </div>
       <div className="tutorials-wrapper">
-        <TutorialSelector tutorialID="drizzledb" />
+        <TutorialSelector tutorialID="textparallaxscroll" />
       </div>
     </div>
   );
