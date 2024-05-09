@@ -8,7 +8,7 @@ function App() {
         <ConceptSelector concept2 />
       </div>
       <div className="tutorials-wrapper">
-        <TutorialSelector tutorialID="webstorage" />
+        <TutorialSelector tutorialID="drizzledb" />
       </div>
     </div>
   );

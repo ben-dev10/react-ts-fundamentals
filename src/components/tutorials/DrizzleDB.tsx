@@ -1,18 +1,13 @@
-// import { addData } from "../../server/actions/queries";
-
-//FIXME: fix Buffer error
-
 export default function DrizzleDB() {
-  // async function handleBtnClick() {
-  //   try {
-  //     //   const data2 = await getData();
-  //     const data2 = await addData(1, "John", "233");
-  //     console.log(data2);
-  //     return data2;
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
+  async function handleBtnClick() {
+    // try {
+    //   const data = await getData();
+    //   console.log(data);
+    //   return data;
+    // } catch (error) {
+    //   console.log(error);
+    // }
+  }
 
   return (
     <main className="h-screen w-screen grid place-items-center">
@@ -36,7 +31,7 @@ export default function DrizzleDB() {
             )} */}
           </div>
           <button
-            // onClick={handleBtnClick}
+            onClick={handleBtnClick}
             className="p-2 mt-3 text-[12px] bg-red-500 text-white rounded-md"
           >
             Get data

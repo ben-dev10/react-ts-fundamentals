@@ -1,4 +1,6 @@
 import {db} from "../db"
+// import db from "../drizzle"
+
 import {users} from "../db/schema"
 
 export const addData = async (id:number, fullName:string, phone:string)=>{
