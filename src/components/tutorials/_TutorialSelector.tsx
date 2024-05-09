@@ -8,6 +8,7 @@ import DrizzleDB from "./DrizzleDB";
 import HeaderSlider from "./HeaderSlider";
 import VercelNav from "./VercelNav";
 import TextParallaxScroll from "./TextParallaxScroll";
+import WebStorage from "./WebStorage";
 
 export default function TutorialSelector({
   tutorialID,
@@ -22,7 +23,8 @@ export default function TutorialSelector({
     | "drizzledb"
     | "headerslider"
     | "vercelnav"
-    | "textparallaxscroll";
+    | "textparallaxscroll"
+    | "webstorage";
 }) {
   const components: { [key: string]: React.FC } = {
     grideffect: GridEffect,
@@ -35,6 +37,7 @@ export default function TutorialSelector({
     headerslider: HeaderSlider,
     vercelnav: VercelNav,
     textparallaxscroll: TextParallaxScroll,
+    webstorage: WebStorage,
   };
 
   const ComponentToRender = components[tutorialID.toLocaleLowerCase()];
