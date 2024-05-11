@@ -9,6 +9,7 @@ import HeaderSlider from "./HeaderSlider";
 import VercelNav from "./VercelNav";
 import TextParallaxScroll from "./TextParallaxScroll";
 import WebStorage from "./WebStorage";
+import SideNavigation from "./SideNavigation";
 
 export default function TutorialSelector({
   tutorialID,
@@ -24,7 +25,8 @@ export default function TutorialSelector({
     | "headerslider"
     | "vercelnav"
     | "textparallaxscroll"
-    | "webstorage";
+    | "webstorage"
+    | "sidenavigation";
 }) {
   const components: { [key: string]: React.FC } = {
     grideffect: GridEffect,
@@ -38,6 +40,7 @@ export default function TutorialSelector({
     vercelnav: VercelNav,
     textparallaxscroll: TextParallaxScroll,
     webstorage: WebStorage,
+    sidenavigation: SideNavigation,
   };
 
   const ComponentToRender = components[tutorialID.toLocaleLowerCase()];
