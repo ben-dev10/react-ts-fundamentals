@@ -78,7 +78,11 @@ const NavigationLink = ({ children, name }: Props) => {
 
 const ProjectLink = ({ children, name, setSelectedProject }: Props2) => {
   const handleClick = () => {
-    setSelectedProject(name);
+    setSelectedProject(null);
+    // only enable selection after 250ms, intended for switching animation between
+    setTimeout(() => {
+      setSelectedProject(name);
+    }, 250);
   };
   return (
     <a
@@ -121,7 +125,7 @@ const ProjectNavigation = ({
       <input
         placeholder="Search"
         type="text"
-        className="px-3 py-2 tracking-wide rounded-lg bg-neutral-600/40 text-neutral-100"
+        className="px-3 py-2 outline-none tracking-wide rounded-lg bg-neutral-600/40 text-neutral-100"
       />
       <div className="flex flex-col gap-3">
         <NavigationLink name="Progress">
@@ -137,7 +141,16 @@ const ProjectNavigation = ({
       <div className="flex flex-col gap-5">
         <h1 className="tracking-wide text-neutral-300">Team members</h1>
         <a href="#" className="flex flex-row gap-3 place-items-center">
-          <UserCircleIcon />
+          <UserCircleIcon className="size-7 rounded-full stroke-2 stroke-rose-800 bg-rose-200/70" />
+          <p className="tracking-wide text-neutral-400">Steve Jobs</p>
+        </a>
+        <a href="#" className="flex flex-row gap-3 place-items-center">
+          <UserCircleIcon className="size-7 rounded-full stroke-2 stroke-emerald-800 bg-emerald-200/70" />
+          <p className="tracking-wide text-neutral-400">Satya Nadella</p>
+        </a>
+        <a href="#" className="flex flex-row gap-3 place-items-center">
+          <UserCircleIcon className="size-7 rounded-full stroke-2 stroke-yellow-800 bg-yellow-200/70" />
+          <p className="tracking-wide text-neutral-400">Tom Cook</p>
         </a>
       </div>
     </motion.nav>
