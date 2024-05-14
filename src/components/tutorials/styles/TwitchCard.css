@@ -1,0 +1,61 @@
+:root {
+    --g1: #306eeb;
+    --g2: #f80e87;
+    --g3: #fdce41;
+}
+
+.card::before {
+    background: linear-gradient(130deg,
+            transparent 0% 33%,
+            var(--g1) 66%,
+            var(--g2) 83.5%,
+            var(--g3) 100%);
+    background-position: 0% 0%;
+    background-size: 300% 300%;
+    content: "";
+    position: absolute;
+    transition: background-position 350ms ease;
+    left: 0px;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.card:hover::before {
+    background-position: 100% 100%;
+    transform: scale(1.08, 1.03)
+}
+
+.card-content {
+    /* this creates the dotted pattern */
+    background: radial-gradient(rgba(255, 255, 255, .2) 8%, transparent 8%);
+    background-size: 5vmin 5vmin;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    height: 100%;
+    width: 100%;
+    transition: background-position 350ms ease;
+}
+
+.card:hover>.card-content {
+    background-position: -10% 0%;
+}
+
+.card-subtitle-word {
+    display: inline-block;
+    margin: 0vmin 0.3vmin;
+    opacity: 0;
+    position: relative;
+    transform: translateY(40%);
+    transition: none;
+}
+
+.card:hover>.card-content>.subtitle>.card-subtitle-word {
+    opacity: 1;
+    transform: translateY(0%);
+    transition: opacity 0ms, transform 200ms cubic-bezier(.9, .06, .15, .90);
+}

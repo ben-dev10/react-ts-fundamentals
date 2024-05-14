@@ -10,6 +10,7 @@ import VercelNav from "./VercelNav";
 import TextParallaxScroll from "./TextParallaxScroll";
 import WebStorage from "./WebStorage";
 import SideNavigation from "./SideNavigation";
+import TwitchCard from "./TwitchCard";
 
 export default function TutorialSelector({
   tutorialID,
@@ -26,7 +27,8 @@ export default function TutorialSelector({
     | "vercelnav"
     | "textparallaxscroll"
     | "webstorage"
-    | "sidenavigation";
+    | "sidenavigation"
+    | "twitchcard";
 }) {
   const components: { [key: string]: React.FC } = {
     grideffect: GridEffect,
@@ -41,6 +43,7 @@ export default function TutorialSelector({
     textparallaxscroll: TextParallaxScroll,
     webstorage: WebStorage,
     sidenavigation: SideNavigation,
+    twitchcard: TwitchCard,
   };
 
   const ComponentToRender = components[tutorialID.toLocaleLowerCase()];
