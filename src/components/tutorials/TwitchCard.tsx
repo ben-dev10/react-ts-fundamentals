@@ -1,6 +1,5 @@
-// import "@/components/tutorials/styles/TwitchCard.css"
+import "@/components/tutorials/styles/TwitchCard.css";
 import { useEffect, useState } from "react";
-import "./styles/TwitchCard.css";
 
 export default function TwitchCard() {
   const [text, setText] = useState<string[]>([]);
