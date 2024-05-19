@@ -19,6 +19,9 @@ const config =  {
         '.color-red': {
           'color': 'red',
         },
+        '.transform-origin-left-bottom': {
+          'transform-origin': 'left bottom',
+        },
       };
       addUtilities(newUtilities, ['responsive', 'hover']);
     },],

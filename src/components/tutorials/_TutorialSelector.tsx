@@ -11,6 +11,7 @@ import TextParallaxScroll from "./TextParallaxScroll";
 import WebStorage from "./WebStorage";
 import SideNavigation from "./SideNavigation";
 import TwitchCard from "./TwitchCard";
+import Buttons from "./lab/buttons";
 
 export default function TutorialSelector({
   tutorialID,
@@ -28,7 +29,8 @@ export default function TutorialSelector({
     | "textparallaxscroll"
     | "webstorage"
     | "sidenavigation"
-    | "twitchcard";
+    | "twitchcard"
+    | "lab:buttons";
 }) {
   const components: { [key: string]: React.FC } = {
     grideffect: GridEffect,
@@ -44,6 +46,7 @@ export default function TutorialSelector({
     webstorage: WebStorage,
     sidenavigation: SideNavigation,
     twitchcard: TwitchCard,
+    "lab:buttons": Buttons,
   };
 
   const ComponentToRender = components[tutorialID.toLocaleLowerCase()];
