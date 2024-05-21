@@ -22,4 +22,8 @@
   .nav-label {
     @apply text-neutral-400 cursor-pointer p-2 px-3 rounded-md hover:bg-neutral-700 hover:text-white
   }
+
+  .payloadBtn {
+    @apply flex items-center !px-10 group-hover:translate-y-[-50px] duration-[600ms] [transition-timing-function:cubic-bezier(.165,.84,.44,1)]
+  }
 }
