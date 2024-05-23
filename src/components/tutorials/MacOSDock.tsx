@@ -5,15 +5,24 @@ import {
   MotionValue,
   useSpring,
 } from "framer-motion";
+import { AlertOctagon } from "lucide-react";
 import { useRef } from "react";
 
-const AppIcon = ({ mouseX }: { mouseX: MotionValue }) => {
-  const ref = useRef<HTMLDivElement>(null);
+const imgUrls = [
+  "/public/app-icons/blender.png",
+  "/public/app-icons/craft.png",
+  "/public/app-icons/framer.png",
+  "/public/app-icons/word.png",
+  "/public/app-icons/obsidian.png",
+];
+
+const AppIcon = ({ mouseX, url }: { mouseX: MotionValue; url: string }) => {
+  const ref = useRef<HTMLImageElement>(null);
   const distance = useTransform(mouseX, (val) => {
     const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
     return val - bounds.x - bounds.width / 2;
   });
-  const widthSync = useTransform(distance, [-200, 0, 200], [40, 90, 40]);
+  const widthSync = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
   const width = useSpring(widthSync, {
     damping: 15,
     mass: 0.1,
@@ -21,10 +30,11 @@ const AppIcon = ({ mouseX }: { mouseX: MotionValue }) => {
   });
 
   return (
-    <motion.div
+    <motion.img
       ref={ref}
       style={{ width }}
-      className="aspect-square w-10 rounded-full bg-gray-500"
+      src={url}
+      className="aspect-square w-10 rounded-full"
     />
   );
 };
@@ -40,11 +50,17 @@ export default function MacOSDock() {
         onMouseLeave={() => {
           mouseX.set(Infinity);
         }}
-        className="dock absolute bottom-[70px] left-[50%] -translate-x-[50%] flex h-16 items-end gap-4 rounded-2xl p-4 pb-3 bg-slate-900"
+        className="dock shrink-0 absolute bottom-[70px] left-[50%] -translate-x-[50%] flex h-16 items-end gap-4 rounded-2xl p-4 pb-3 bg-slate-900/50 backdrop-blur-md"
       >
-        {[...Array(6).keys()].map((i) => (
-          <AppIcon key={i} mouseX={mouseX} />
+        {imgUrls.map((url, i) => (
+          <AppIcon key={i} mouseX={mouseX} url={url} />
         ))}
+      </div>
+      <div className="alert text-rose-500 text-[12px]  md:opacity-0 transition-opacity duration-600 absolute bottom-[40px] left-[50%] -translate-x-[50%] whitespace-pre ">
+        <div className="flex items-center gap-1">
+          <AlertOctagon size={16} />
+          Dock design may break at smaller screens
+        </div>
       </div>
     </main>
   );
