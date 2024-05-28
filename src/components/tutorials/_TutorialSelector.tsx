@@ -13,6 +13,8 @@ import SideNavigation from "./SideNavigation";
 import TwitchCard from "./TwitchCard";
 import Buttons from "./lab/buttons";
 import MacOSDock from "./MacOSDock";
+import HTML from "./HTML";
+import AnimatedBottomTray from "./AnimatedBottomTray";
 
 export default function TutorialSelector({
   tutorialID,
@@ -32,7 +34,9 @@ export default function TutorialSelector({
     | "sidenavigation"
     | "twitchcard"
     | "lab:buttons"
-    | "macosdock";
+    | "macosdock"
+    | "html"
+    | "animatedbottomtray";
 }) {
   const components: { [key: string]: React.FC } = {
     grideffect: GridEffect,
@@ -50,6 +54,8 @@ export default function TutorialSelector({
     twitchcard: TwitchCard,
     "lab:buttons": Buttons,
     macosdock: MacOSDock,
+    html: HTML,
+    animatedbottomtray: AnimatedBottomTray,
   };
 
   const ComponentToRender = components[tutorialID.toLocaleLowerCase()];

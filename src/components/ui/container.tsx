@@ -18,6 +18,8 @@ export default function Container({
     variant = "max-w-6xl";
   }
   return (
-    <div className={`wrapper mx-auto ${variant} ${className}`}>{children}</div>
+    <div className={`wrapper p-4 mx-auto ${variant} ${className}`}>
+      {children}
+    </div>
   );
 }
