@@ -1,5 +1,10 @@
 import { ReactNode, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useDragControls,
+  useMotionValue,
+} from "framer-motion";
 import {
   OptionsMenu,
   PrivateKey,
@@ -21,6 +26,9 @@ export const Tray = ({ closeTray }: TrayProps) => {
     remove: <RemoveWallet setContent={setContent} closeTray={closeTray} />,
   };
 
+  const controls = useDragControls();
+  const dragY = useMotionValue(0);
+
   return (
     <>
       <motion.div
@@ -31,14 +39,48 @@ export const Tray = ({ closeTray }: TrayProps) => {
         onClick={closeTray}
       />
       <motion.div
+        style={{ borderRadius: 28, y: dragY }}
         initial={{ y: 336 }}
         animate={{ y: 0 }}
         exit={{ y: 500 }}
         transition={{ duration: 0.2, ease: "easeIn" }}
+        className="absolute bottom-4 inset-x-0 mx-auto w-[22rem] min-h-10 bg-neutral-50 px-8 pb-6 overflow-hidden"
         layout
-        className="absolute bottom-4 inset-x-0 mx-auto w-[22rem] min-h-10 bg-neutral-50 px-8 pb-6 overflow-hidden rounded-xl"
+        drag="y"
+        dragListener={false}
+        dragControls={controls}
+        dragConstraints={{
+          top: 0,
+          bottom: 0,
+        }}
+        dragElastic={{
+          top: 0,
+          bottom: 0.5,
+        }}
+        onDragEnd={() => {
+          if (dragY.get() >= 100) {
+            closeTray();
+          }
+        }}
       >
-        <motion.div className="pt-3 text-[13px]" key={content}>
+        <button className="my-3 mx-auto flex justify-center">
+          <motion.div
+            layout
+            key="drag-bar"
+            onPointerDown={(e) => {
+              controls.start(e);
+            }}
+            style={{ borderRadius: 100 }}
+            className="h-2 w-14 cursor-grab touch-none bg-gray-200 active:cursor-grabbing"
+          />
+        </button>
+        <motion.div
+          className="text-[13px]"
+          key={content}
+          layout="position"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
           {trayContent[content]}
         </motion.div>
       </motion.div>
